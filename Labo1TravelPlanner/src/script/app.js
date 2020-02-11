@@ -11,7 +11,7 @@ const showCountriesForContinent = async (continent = 'europe') => {
         console.log(country);
         countryHolder.innerHTML += `
             <div>
-                <input type="check" id="" class="o-hide-accessible" />
+                <input type="checkbox" id="" class="o-hide-accessible c-country__input" />
                 <label class="c-country" for="${country.name}">
                     <div class="c-country__header">
                         <h2 class="c-country__name">${country.name}</h2>
