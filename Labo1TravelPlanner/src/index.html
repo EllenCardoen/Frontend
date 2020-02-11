@@ -7,10 +7,35 @@
         
         <link rel="stylesheet" href="./style/normalize.css" />
         <link rel="stylesheet" href="./style/screen.css" /> 
+        <script src="./script/app.js"></script>
     </head>
     <body>
         <div class="c-app">
-            
+            <nav class="c-nav">
+                <header class="c-header">
+                    <img class="c-header__logo" src="../favicon-32.png" alt="" />
+                    Visited Countries
+                </header>
+
+                <div class="c-menu">
+                    <h2 class="c-menu__header">Select a region</h2>
+                    <ul class="c-menu-list js-menu">
+                        <li class="c-menu-list__item"><button class="c-menu-list__button js-continent">Africa</button></li>
+                        <li class="c-menu-list__item"><button class="c-menu-list__button js-continent">Americas</button></li>
+                        <li class="c-menu-list__item"><button class="c-menu-list__button js-continent">Asia</button></li>
+                        <li class="c-menu-list__item"><button class="c-menu-list__button js-continent">Europe</button></li>
+                        <li class="c-menu-list__item"><button class="c-menu-list__button js-continent">Oceania</button></li>
+                    </ul>
+                </div>
+
+                <aside class="c-counter">
+                    <span class="u-color-alpha">92</span> /250
+                </aside>
+            </nav>
+
+            <main class="c-content">
+                <div class="c-countries js-countries"></div>
+            </main>
         </div>
     </body>
 </html>

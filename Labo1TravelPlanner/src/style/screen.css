@@ -3,6 +3,9 @@
     --sidebar-width: 350px;
 
     --baseline: 8;
+
+    --alpha-color-light: rgb(224, 224, 255);
+    --alpha-color: rgb(70, 70, 255);
 }
 
 /* GENERIC */
@@ -38,8 +41,101 @@ body {
     /* appearance */
 
     /* other */
+}
+
+.c-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 3rem 2rem;
+
+    background: var(--alpha-color-light);
+}
+
+.c-header{
+    display: flex;
+    align-items: center;
+}
+
+.c-header__logo{
+    margin-right: 0.5rem;
 
 }
 
+.c-menu-list {
+    padding: 0;
+    list-style: none;
+}
+
+.c-menu-list__item {
+
+}
+
+.c-menu-list__button {
+    all: unset; /* appearance: none; */
+
+    padding: 0.25rem 0;
+
+    font-size: 1.1rem;
+    color: var(--alpha-color);
+
+    opacity: 0.6;
+    will-change: opacity;
+    transition: 200ms opacity ease-in;
+
+    cursor: pointer;
+}
+
+.c-menu-list__button:hover {
+    opacity: 1;
+}
+
+.c-counter {
+    font-size: 1.1rem;
+    letter-spacing: 0.03rem;
+}
+
+.c-content {
+    box-sizing: border-box;
+    height: 100vh;   /* dit doen we bijna nooit!!! */
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 3rem 3rem 3rem 0;
+}
+
+.o-hide-accessible {
+    
+}
+
+.c-countries {
+
+}
+
+.c-country {
+
+}
+
+.c-country__header{
+
+}
+
+.c-country__name {
+
+}
+
+.c-country__flag {
+
+}
+
+.c-country__native-name{
+
+}
+
+
 /* UTILITIES */
+.u-color-alpha {
+    color: var(--alpha-color);
+}
 

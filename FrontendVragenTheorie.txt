@@ -1,5 +1,7 @@
 Wat is de cascading in cascading style sheet (CSS)?
 
+Wat is het verschil tussen content-fill en content-fit?
+
 
 
 
