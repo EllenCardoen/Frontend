@@ -27,14 +27,13 @@ body {
 /* OBJECTS */
 
 .o-hide-accessible {
-    clip: rect(1px, 1px, 1px, 1px);
-    clip-path: inset(50%);
-    height: 1px;
+    position: absolute !important;
+    height: 1px; 
     width: 1px;
-    margin: -1px;
     overflow: hidden;
-    padding: 0;
-    position: absolute;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
 }
 
 /* COMPONENTS */
@@ -116,8 +115,6 @@ body {
     padding: 3rem 3rem 3rem 0;
 }
 
-
-
 .c-country__input:checked + .c-country {
     opacity: 0.4;
 }
@@ -159,3 +156,6 @@ body {
     color: var(--alpha-color);
 }
 
+.u-cursor-pointer {
+    cursor: pointer;
+}

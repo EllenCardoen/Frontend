@@ -1,4 +1,32 @@
-//in de volgende lijn wil (continent='europa') zeggen dat we het continent automatisch op europa zetten als default"
+let visitedCountries = localStorage.visitedCountries
+    ? JSON.parse(localStorage.visitedCountries : []; //
+
+const saveInBrowser = () => {
+    localStorage.setItem('visitedCountries', JSON.stringify(visitedCountries));
+}
+
+const checkVisitedCount = () => {
+    const counter = document.querySelector('js-count');
+    counter.innerHTML = visitedCountries.length;
+}
+
+const enableListenersToCountries = () => {
+    const countries = document.querySelectorAll('.js-country');
+    for (const country of countries) {
+        country.addEventListener('change', function() {
+            if (country.checked) {
+                visitedCountries.push(country.value);
+            }
+            else {
+                visitedCountries = visitedCountries.filter(c => c !== country.value );
+            }
+            saveInBrowser();
+            checkVisitedCount();
+        });
+    }
+};
+
+//in de volgende line wil (continent='europa') zeggen dat we het continent automatisch op europa zetten als default"
 const showCountriesForContinent = async (continent = 'europe') => {
 
     const countryHolder = document.querySelector('.js-countries');
@@ -11,9 +39,9 @@ const showCountriesForContinent = async (continent = 'europe') => {
         console.log(country);
         countryHolder.innerHTML += `
             <div>
-                <input type="checkbox" id="" class="o-hide-accessible c-country__input" />
-                <label class="c-country" for="${country.name}">
-                    <div class="c-country__header">
+                <input type="checkbox" id="${country.name}" class="o-hide-accessible c-country__input js-country" ${(visitedCountries.includes(country.alpha2Code)) ? `checked` : ``} value="${country.alpha2Code}" />
+                <label class="c-country u-cursor-pointer" for="${country.name}">
+                    <div class="c-country__header ">
                         <h2 class="c-country__name">${country.name}</h2>
                         <img class="c-country__flag" src="${country.flag}" alt="The flag of ${country.name}" />
                     </div>
@@ -22,6 +50,8 @@ const showCountriesForContinent = async (continent = 'europe') => {
             </div>
         `;
     }
+
+    enableListenersToCountries();
 }
 
 const listenToContinentChange = () => {
@@ -38,4 +68,5 @@ document.addEventListener('DOMContentLoaded', function(){
     listenToContinentChange();
 
     showCountriesForContinent();
+    checkVisitedCount(); //Misschien waren er nog countries in localStorage...
 });
