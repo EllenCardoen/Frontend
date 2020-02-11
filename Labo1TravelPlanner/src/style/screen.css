@@ -1,0 +1,45 @@
+/* SETTINGS */
+:root {
+    --sidebar-width: 350px;
+
+    --baseline: 8;
+}
+
+/* GENERIC */
+
+/* Zie normalize.css */
+
+/* ELEMENTS */
+html,
+body {
+    font: 16px/1.5 'Sarabun', sans-serif;
+    /*
+        IN DEZE ENE LIJN STAAT EIGENLIJK:
+        font-size: 16px;
+        line-height: 1.5;
+        font-family: 'Sarabun', sans-serif;
+    */
+}
+
+/* OBJECTS */
+
+/* COMPONENTS */
+.c-app {
+    /* positioning */
+
+    /* box model */
+    display: grid;
+    grid-template-columns: var(--sidebar-width) auto;
+    grid-gap: 2rem;
+    min-height: 100vh;
+
+    /* font */
+
+    /* appearance */
+
+    /* other */
+
+}
+
+/* UTILITIES */
+
